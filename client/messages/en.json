@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About us",
+    "contact": "Contact"
+  },
+  "HomePage": {
+    "title": "Dara Transilvania",
+    "subtitle": "Frozen Food Distribution",
+    "aboutUsTitle": "About Us",
+    "aboutUsText": "Dara Transilvania is a leader in frozen food distribution in Romania. We offer a wide range of meat, vegetables and semi-prepared products for the HoReCa sector.",
+    "productsButton": "View Products",
+    "contactButton": "Contact Us"
+  }
+}

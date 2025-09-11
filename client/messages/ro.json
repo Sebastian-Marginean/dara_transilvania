@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "products": "Produse",
+    "about": "Despre noi",
+    "contact": "Contact"
+  },
+  "HomePage": {
+    "title": "Dara Transilvania",
+    "subtitle": "Distribuție Produse Alimentare Congelate",
+    "aboutUsTitle": "Despre Noi",
+    "aboutUsText": "Dara Transilvania este lider în distribuția de produse alimentare congelate în România. Oferim o gamă variată de carne, legume și semipreparate pentru sectorul HoReCa.",
+    "productsButton": "Vezi Produsele",
+    "contactButton": "Contactează-ne"
+  }
+}
