@@ -5,6 +5,12 @@
     "about": "Despre noi",
     "contact": "Contact"
   },
+  "Navigation": {
+    "home": "Acasă",
+    "products": "Produse",
+    "about": "Despre noi",
+    "contact": "Contact"
+  },
   "HomePage": {
     "title": "Dara Transilvania",
     "subtitle": "Distribuție Produse Alimentare Congelate",
@@ -12,5 +18,29 @@
     "aboutUsText": "Dara Transilvania este lider în distribuția de produse alimentare congelate în România. Oferim o gamă variată de carne, legume și semipreparate pentru sectorul HoReCa.",
     "productsButton": "Vezi Produsele",
     "contactButton": "Contactează-ne"
+  },
+  "ProductsPage": {
+    "title": "Produse",
+    "subtitle": "Gama noastră de produse congelate",
+    "categories": {
+      "poultry": {
+        "title": "Pui",
+        "desc": "Carne de pui, aripioare, piept, pulpe."
+      },
+      "pork": {
+        "title": "Porc",
+        "desc": "Carne de porc, cotlet, ceafă, mușchi."
+      },
+      "vegetables": {
+        "title": "Legume",
+        "desc": "Legume congelate, mixuri, mazăre, fasole."
+      },
+      "potatoes": {
+        "title": "Cartofi",
+        "desc": "Cartofi pai, rondele, wedges."
+      },
+      "fish": { "title": "Pește", "desc": "Pește congelat, file, rondele." },
+      "beef": { "title": "Vită", "desc": "Carne de vită, antricot, mușchi." }
+    }
   }
 }
