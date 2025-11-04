@@ -115,3 +115,11 @@ body {
 .bg-dark-overlay {
   background: rgba(8, 8, 8, 0.55);
 }
+
+.glow-gold {
+  filter: drop-shadow(0 0 0px #FFD700);
+  transition: filter 0.3s;
+}
+.group:hover .glow-gold {
+  filter: drop-shadow(0 0 6px #FFD700) drop-shadow(0 0 12px #FFD700);
+}

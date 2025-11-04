@@ -21,20 +21,27 @@
   },
   "ProductsPage": {
     "title": "Products",
-    "subtitle": "Our range of frozen products",
-    "categories": {
-      "poultry": {
-        "title": "Poultry",
-        "desc": "Chicken, wings, breasts, thighs."
-      },
-      "pork": { "title": "Pork", "desc": "Pork cuts, chops, loin." },
-      "vegetables": {
-        "title": "Vegetables",
-        "desc": "Frozen vegetables, mixes, peas, beans."
-      },
-      "potatoes": { "title": "Potatoes", "desc": "Fries, slices, wedges." },
-      "fish": { "title": "Fish", "desc": "Frozen fish, fillets, rounds." },
-      "beef": { "title": "Beef", "desc": "Beef cuts, ribeye, sirloin." }
-    }
+    "subtitle": "Choose from our categories",
+    "backHome": "Back to Home"
+  },
+  "categories": {
+    "Carne": "Meat",
+    "Condimente": "Spices",
+    "Conserve": "Canned",
+    "Fără regim termic": "Non-refrigerated",
+    "Legume": "Vegetables",
+    "Paste": "Pasta",
+    "Produse lactate": "Dairy",
+    "Specialități": "Specialties"
+  },
+  "categoryDescriptions": {
+    "Carne": "Beef, pork, chicken, fish, duck.",
+    "Condimente": "Oregano, garlic, black pepper, sweet paprika.",
+    "Conserve": "Black olives, beetroot, pickles, roasted capia peppers.",
+    "Fără regim termic": "Yellow breadcrumbs, Knorr sauces, vegetable fat, gelatin, condimix.",
+    "Legume": "Potatoes for frying, spinach, peas, beans, cauliflower, broccoli.",
+    "Paste": "Barilla spaghetti, tagliatelle.",
+    "Produse lactate": "Butter, lavender cheese, pesto, gouda, edamer, black cheese.",
+    "Specialități": "Spring rolls, jalapenos snacks, spicy cheese."
   }
 }

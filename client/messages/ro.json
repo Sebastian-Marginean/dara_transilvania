@@ -21,26 +21,27 @@
   },
   "ProductsPage": {
     "title": "Produse",
-    "subtitle": "Gama noastră de produse congelate",
-    "categories": {
-      "poultry": {
-        "title": "Pui",
-        "desc": "Carne de pui, aripioare, piept, pulpe."
-      },
-      "pork": {
-        "title": "Porc",
-        "desc": "Carne de porc, cotlet, ceafă, mușchi."
-      },
-      "vegetables": {
-        "title": "Legume",
-        "desc": "Legume congelate, mixuri, mazăre, fasole."
-      },
-      "potatoes": {
-        "title": "Cartofi",
-        "desc": "Cartofi pai, rondele, wedges."
-      },
-      "fish": { "title": "Pește", "desc": "Pește congelat, file, rondele." },
-      "beef": { "title": "Vită", "desc": "Carne de vită, antricot, mușchi." }
-    }
+    "subtitle": "Alege din categoriile noastre",
+    "backHome": "Înapoi la Acasă"
+  },
+  "categories": {
+    "Carne": "Carne",
+    "Condimente": "Condimente",
+    "Conserve": "Conserve",
+    "Fără regim termic": "Fără regim termic",
+    "Legume": "Legume",
+    "Paste": "Paste",
+    "Produse lactate": "Produse lactate",
+    "Specialități": "Specialități"
+  },
+  "categoryDescriptions": {
+    "Carne": "Vită, porc, pui, pește, rață.",
+    "Condimente": "Oregano, usturoi, piper negru, boia dulce.",
+    "Conserve": "Măsline negre, sfeclă roșie, castraveți murați, ardei capia copt.",
+    "Fără regim termic": "Pesmet galben, sosuri Knorr, grăsime vegetală, gelatină, condimix.",
+    "Legume": "Cartofi pentru prăjit, spanac, mazăre, fasole, conopidă, broccoli.",
+    "Paste": "Spaghete Barilla, tagliatelle.",
+    "Produse lactate": "Unt, cașcaval cu lavandă, pesto, gouda, edamer, negru.",
+    "Specialități": "Rulouri de primăvară, jalapenos snacks, brânză picantă."
   }
 }
