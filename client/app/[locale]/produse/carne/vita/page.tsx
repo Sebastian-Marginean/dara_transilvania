@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { supabase } from "../../../../../supabaseClient";
 
 export default function BeefProductsPage() {
   const params = useParams();
@@ -16,77 +17,23 @@ export default function BeefProductsPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // Încearcă diferite variante pentru API
-        let response = await fetch(
-          `http://localhost:8000/api/products?category=Vita`
-        );
-
-        if (!response.ok) {
-          // Dacă nu merge cu Vita, încearcă cu toate produsele și filtrează
-          response = await fetch("http://localhost:8000/api/products");
-        }
-
-        if (response.ok) {
-          const data = await response.json();
-          console.log("Raw data:", data);
-
-          // Filtrează produsele de vită
-          const beefProducts = data.filter(
-            (product: any) =>
-              product.category === "Vita" ||
-              product.subcategory === "Vita" ||
-              product.name.toLowerCase().includes("vită") ||
-              product.name.toLowerCase().includes("vita") ||
-              product.name.toLowerCase().includes("beef")
-          );
-
-          beefProducts.forEach((product: any, idx: number) => console.log(`Produs ${idx}:`, product));
-          console.log("Locale:", locale);
-
-          console.log("API products:", beefProducts);
-          setProducts(beefProducts);
-        } else {
-          console.error("Failed to fetch products");
+        const { data, error } = await supabase
+          .from("product")
+          .select("*")
+          .eq("category", "Vita");
+        if (error) {
+          console.error("Supabase error:", error);
           setProducts([]);
+        } else {
+          setProducts(data || []);
         }
       } catch (error) {
-        console.error("Error fetching products:", error);
-        // Folosește date mock dacă API-ul nu funcționează
-        setProducts([
-          {
-            id: 1,
-            name: "Mușchi de vită",
-            price: "45.50",
-            description: "Mușchi de vită premium, tender și savuros",
-            inStock: false,
-          },
-          {
-            id: 2,
-            name: "Antricot de vită",
-            price: "38.00",
-            description: "Antricot de vită maturizat, perfect pentru grătar",
-            inStock: true,
-          },
-          {
-            id: 3,
-            name: "Pulpă de vită",
-            price: "32.75",
-            description: "Pulpă de vită ideală pentru friptură",
-            inStock: true,
-          },
-          {
-            id: 4,
-            name: "Coaste de vită",
-            price: "28.00",
-            description: "Coaste de vită pentru preparate tradiționale",
-            inStock: true,
-          },
-        ]);
+        console.error("Error fetching products from Supabase:", error);
+        setProducts([]);
       } finally {
         setLoading(false);
       }
     };
-
     fetchProducts();
   }, []);
 

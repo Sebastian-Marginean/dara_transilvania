@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { supabase } from "../../../../../supabaseClient";
 
 export default function SeafoodProductsPage() {
   const params = useParams();
@@ -16,195 +17,23 @@ export default function SeafoodProductsPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        console.log("=== DEBUGGING SEAFOOD FETCH ===");
-
-        // Încearcă diferite variante pentru API
-        const variations = [
-          "Peste",
-          "peste",
-          "Fish",
-          "Seafood",
-          "Fructe de mare",
-        ];
-
-        for (const variant of variations) {
-          console.log(`Trying API with: ${variant}`);
-          let response = await fetch(
-            `http://localhost:8000/api/products?category=${encodeURIComponent(
-              variant
-            )}`
-          );
-
-          if (response.ok) {
-            const data = await response.json();
-            console.log(`Response for "${variant}":`, data);
-            if (data && data.length > 0) {
-              setProducts(data);
-              setLoading(false);
-              return;
-            }
-          }
-        }
-
-        // Dacă nu găsește nimic, încearcă cu toate produsele
-        console.log("Fetching all products to filter...");
-        const response = await fetch("http://localhost:8000/api/products");
-
-        if (response.ok) {
-          const data = await response.json();
-          console.log("All products:", data);
-
-          // Filtrează produsele de pește și fructe de mare
-          const allowedCategories = [
-            "peste",
-            "fish",
-            "seafood",
-            "fructe de mare",
-            "peste si fructe de mare"
-          ];
-          const forbiddenCategories = ["vita", "vită"];
-          const seafoodProducts = data.filter((product: any) => {
-            const cat = product.category ? product.category.trim().toLowerCase() : "";
-            const subcat = product.subcategory ? product.subcategory.trim().toLowerCase() : "";
-            // exclude orice produs cu category/subcategory vita/vită
-            if (forbiddenCategories.includes(cat) || forbiddenCategories.includes(subcat)) {
-              return false;
-            }
-            // acceptă doar dacă e exact una din categoriile permise
-            if (allowedCategories.includes(cat) || allowedCategories.includes(subcat)) {
-              return true;
-            }
-            // fallback: dacă numele conține clar un pește/fruct de mare
-            if (product.name) {
-              const name = product.name.toLowerCase();
-              return (
-                name.includes("somon") ||
-                name.includes("ton") ||
-                name.includes("crevete") ||
-                name.includes("midii") ||
-                name.includes("cod")
-              );
-            }
-            return false;
-          });
-
-          console.log("Filtered seafood products:", seafoodProducts);
-
-          if (seafoodProducts.length > 0) {
-            setProducts(seafoodProducts);
-          } else {
-            // Fallback la mock data
-            console.log("No seafood products found, using mock data");
-            setProducts([
-              {
-                id: 1,
-                name: "Somon proaspăt",
-                price: "42.50",
-                description: "Somon proaspăt de Atlantic, bogat în omega-3",
-                inStock: true,
-              },
-              {
-                id: 2,
-                name: "Creveti jumbo",
-                price: "38.00",
-                description:
-                  "Creveti jumbo congelați, perfecti pentru aperitive",
-                inStock: true,
-              },
-              {
-                id: 3,
-                name: "Fileuri de cod",
-                price: "28.75",
-                description:
-                  "Fileuri de cod alb, ideale pentru preparate dietetice",
-                inStock: true,
-              },
-              {
-                id: 4,
-                name: "Midii",
-                price: "24.00",
-                description:
-                  "Midii proaspete în cochilie, pentru preparate mediteraneene",
-                inStock: true,
-              },
-            ]);
-          }
+        const { data, error } = await supabase
+          .from("product")
+          .select("*")
+          .or("category.eq.Peste,category.eq.Peste si Fructe de Mare,category.eq.Fructe de mare,category.eq.Seafood,category.eq.Fish");
+        if (error) {
+          console.error("Supabase error:", error);
+          setProducts([]);
         } else {
-          console.error("Failed to fetch all products");
-          // Fallback la mock data
-          setProducts([
-            {
-              id: 1,
-              name: "Somon proaspăt",
-              price: "42.50",
-              description: "Somon proaspăt de Atlantic, bogat în omega-3",
-              inStock: true,
-            },
-            {
-              id: 2,
-              name: "Creveti jumbo",
-              price: "38.00",
-              description: "Creveti jumbo congelați, perfecti pentru aperitive",
-              inStock: true,
-            },
-            {
-              id: 3,
-              name: "Fileuri de cod",
-              price: "28.75",
-              description:
-                "Fileuri de cod alb, ideale pentru preparate dietetice",
-              inStock: true,
-            },
-            {
-              id: 4,
-              name: "Midii",
-              price: "24.00",
-              description:
-                "Midii proaspete în cochilie, pentru preparate mediteraneene",
-              inStock: true,
-            },
-          ]);
+          setProducts(data || []);
         }
       } catch (error) {
-        console.error("Error fetching products:", error);
-        // Fallback la mock data
-        setProducts([
-          {
-            id: 1,
-            name: "Somon proaspăt",
-            price: "42.50",
-            description: "Somon proaspăt de Atlantic, bogat în omega-3",
-            inStock: true,
-          },
-          {
-            id: 2,
-            name: "Creveti jumbo",
-            price: "38.00",
-            description: "Creveti jumbo congelați, perfecti pentru aperitive",
-            inStock: true,
-          },
-          {
-            id: 3,
-            name: "Fileuri de cod",
-            price: "28.75",
-            description:
-              "Fileuri de cod alb, ideale pentru preparate dietetice",
-            inStock: true,
-          },
-          {
-            id: 4,
-            name: "Midii",
-            price: "24.00",
-            description:
-              "Midii proaspete în cochilie, pentru preparate mediteraneene",
-            inStock: true,
-          },
-        ]);
+        console.error("Error fetching products from Supabase:", error);
+        setProducts([]);
       } finally {
         setLoading(false);
       }
     };
-
     fetchProducts();
   }, []);
 

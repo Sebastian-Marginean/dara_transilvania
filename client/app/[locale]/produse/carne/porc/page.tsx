@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { supabase } from "../../../../../supabaseClient";
 
 export default function PorkProductsPage() {
   const params = useParams();
@@ -16,67 +17,23 @@ export default function PorkProductsPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        let response = await fetch(
-          `http://localhost:8000/api/products?category=Porc`
-        );
-
-        if (!response.ok) {
-          response = await fetch("http://localhost:8000/api/products");
-        }
-
-        if (response.ok) {
-          const data = await response.json();
-          const porkProducts = data.filter(
-            (product: any) =>
-              product.category === "Porc" ||
-              product.subcategory === "Porc" ||
-              product.name.toLowerCase().includes("porc") ||
-              product.name.toLowerCase().includes("pork") ||
-              product.name.toLowerCase().includes("șuncă") ||
-              product.name.toLowerCase().includes("cârnați")
-          );
-          setProducts(porkProducts);
-        } else {
+        const { data, error } = await supabase
+          .from("product")
+          .select("*")
+          .eq("category", "Porc");
+        if (error) {
+          console.error("Supabase error:", error);
           setProducts([]);
+        } else {
+          setProducts(data || []);
         }
-      } catch {
-        // Am eliminat (error) de aici pentru a rezolva eroarea ESLint
-        setProducts([
-          {
-            id: 1,
-            name: "Mușchi de porc",
-            price: "32.50",
-            description:
-              "Mușchi de porc tender și savuros, perfect pentru friptură",
-            inStock: true,
-          },
-          {
-            id: 2,
-            name: "Cotlet de porc",
-            price: "28.00",
-            description: "Cotlet de porc cu os, ideal pentru grătar",
-            inStock: true,
-          },
-          {
-            id: 3,
-            name: "Pulpă de porc",
-            price: "24.75",
-            description: "Pulpă de porc pentru preparate tradiționale",
-            inStock: true,
-          },
-          {
-            id: 4,
-            name: "Șuncă de porc",
-            price: "36.00",
-            description: "Șuncă de porc afumată tradițional",
-            inStock: true,
-          },
-        ]);
+      } catch (error) {
+        console.error("Error fetching products from Supabase:", error);
+        setProducts([]);
       } finally {
         setLoading(false);
       }
     };
-
     fetchProducts();
   }, []);
 

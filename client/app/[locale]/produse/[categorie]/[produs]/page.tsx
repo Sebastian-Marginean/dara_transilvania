@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { supabase } from "../../../../../supabaseClient";
 
 export default function ProductPage() {
   const params = useParams();
@@ -15,19 +16,31 @@ export default function ProductPage() {
   const [quantity, setQuantity] = useState<number>(100);
 
   useEffect(() => {
-    fetch(
-      `http://localhost:8000/api/product?name=${decodeURIComponent(produs)}`
-    )
-      .then((res) => res.json())
-      .then(setProduct);
+    const fetchProductData = async () => {
+      // Fetch product details by name
+      const { data: productData, error: productError } = await supabase
+        .from("product")
+        .select("*")
+        .eq("name", produs)
+        .single();
+      if (productError) {
+        setProduct({ error: true });
+      } else {
+        setProduct(productData);
+      }
 
-    fetch(
-      `http://localhost:8000/api/products?category=${encodeURIComponent(
-        categorie
-      )}`
-    )
-      .then((res) => res.json())
-      .then((data) => setSimilar(data.filter((p: any) => p.name !== produs)));
+      // Fetch similar products by category, excluding current product
+      const { data: similarData, error: similarError } = await supabase
+        .from("product")
+        .select("*")
+        .eq("category", categorie);
+      if (similarError) {
+        setSimilar([]);
+      } else {
+        setSimilar((similarData || []).filter((p: any) => p.name !== produs));
+      }
+    };
+    fetchProductData();
   }, [produs, categorie]);
 
   if (!product || product.error) {

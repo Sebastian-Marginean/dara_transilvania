@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import { supabase } from "../../../supabaseClient";
 
 const categoryIcons: Record<string, string> = {
   Carne: "🥩",
@@ -37,9 +38,20 @@ export default function ProductsPage() {
   const locale = typeof params.locale === "string" ? params.locale : "ro";
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/categories")
-      .then((res) => res.json())
-      .then((data) => setRawCategories(Array.isArray(data) ? data : []));
+    // Fetch categories from Supabase
+    async function fetchCategories() {
+      const { data, error } = await supabase
+        .from('categories')
+        .select('name');
+      if (error) {
+        console.error('Supabase error:', error);
+        setRawCategories([]);
+      } else {
+        // Assuming 'name' is the category name field
+        setRawCategories(data.map((cat: { name: string }) => cat.name));
+      }
+    }
+    fetchCategories();
   }, []);
 
   const processedCategories = rawCategories.reduce(
