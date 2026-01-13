@@ -12,7 +12,7 @@ export default function Footer({ locale }: FooterProps) {
         <div className="flex-1 flex flex-col items-start gap-4">
           <div className="flex items-center gap-4">
             <img
-              src="/images/Dara-logo.png"
+              src="/images/dara-logo.png"
               alt="Dara Transilvania Logo"
               className="h-20 w-auto rounded-xl shadow-lg bg-black/30 p-2"
             />
