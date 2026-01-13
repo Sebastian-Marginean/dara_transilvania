@@ -8,6 +8,11 @@ config.autoAddCss = false; // Oprește adăugarea automată a CSS-ului de către
 export const metadata: Metadata = {
   title: "Dara Transilvania",
   description: "Distribuție Produse Alimentare Congelate",
+  icons: {
+    icon: "/images/dara-logo6.png",
+    shortcut: "/images/dara-logo6.png",
+    apple: "/images/dara-logo6.png",
+  },
 };
 
 const playfairDisplay = Playfair_Display({
