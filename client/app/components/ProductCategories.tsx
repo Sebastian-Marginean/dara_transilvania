@@ -2,34 +2,28 @@ type ProductCategoriesProps = { locale: string };
 
 const categories = {
   ro: [
-    {
-      name: "Carne",
-      link: "/ro/produse/carne",
-      icon: "🥩",
-      hasSubcategories: true,
-    },
+    { name: "Carne", link: "/ro/produse/carne", icon: "🥩", hasSubcategories: true },
+    { name: "Peste", link: "/ro/produse/peste", icon: "🐟" },
     { name: "Cartofi", link: "/ro/produse/cartofi", icon: "🥔" },
     { name: "Lactate", link: "/ro/produse/lactate", icon: "🧀" },
     { name: "Legume", link: "/ro/produse/legume", icon: "🥦" },
     { name: "Conserve", link: "/ro/produse/conserve", icon: "🥫" },
     { name: "Condimente", link: "/ro/produse/condimente", icon: "🧂" },
     { name: "Paste", link: "/ro/produse/paste", icon: "🍝" },
-    { name: "Specialități", link: "/ro/produse/specialitati", icon: "🍲" },
+    { name: "Sosuri", link: "/ro/produse/sosuri", icon: "🥗" },
+    { name: "Specialități", link: "/ro/produse/specialitati", icon: "🍤" },
   ],
   en: [
-    {
-      name: "Meat",
-      link: "/en/products/meat",
-      icon: "🥩",
-      hasSubcategories: true,
-    },
+    { name: "Meat", link: "/en/products/meat", icon: "🥩", hasSubcategories: true },
+    { name: "Fish", link: "/en/products/fish", icon: "🐟" },
     { name: "Potatoes", link: "/en/products/potatoes", icon: "🥔" },
     { name: "Dairy", link: "/en/products/dairy", icon: "🧀" },
     { name: "Vegetables", link: "/en/products/vegetables", icon: "🥦" },
     { name: "Canned", link: "/en/products/canned", icon: "🥫" },
     { name: "Spices", link: "/en/products/spices", icon: "🧂" },
     { name: "Pasta", link: "/en/products/pasta", icon: "🍝" },
-    { name: "Specialties", link: "/en/products/specialties", icon: "🍲" },
+    { name: "Sauces", link: "/en/products/sauces", icon: "🥗" },
+    { name: "Specialties", link: "/en/products/specialties", icon: "🍤" },
   ],
 };
 

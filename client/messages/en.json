@@ -26,22 +26,26 @@
   },
   "categories": {
     "Carne": "Meat",
-    "Condimente": "Spices",
-    "Conserve": "Canned",
-    "Fără regim termic": "Non-refrigerated",
+    "Peste": "Fish",
+    "Cartofi": "Potatoes",
+    "Lactate": "Dairy",
     "Legume": "Vegetables",
+    "Conserve": "Canned",
+    "Condimente": "Spices",
     "Paste": "Pasta",
-    "Produse lactate": "Dairy",
-    "Specialități": "Specialties"
+    "Sosuri": "Sauces",
+    "Specialitati": "Specialties"
   },
   "categoryDescriptions": {
-    "Carne": "Beef, pork, chicken, fish, duck.",
-    "Condimente": "Oregano, garlic, black pepper, sweet paprika.",
+    "Carne": "Beef, pork, chicken, fish",
+    "Peste": "Fresh fish and seafood.",
+    "Cartofi": "Potato products.",
+    "Specialitati": "Products from the specialties category",
+    "Lactate": "Products from the dairy category",
+    "Legume": "Spinach, peas, beans, cauliflower, broccoli and other mixtures.",
     "Conserve": "Black olives, beetroot, pickles, roasted capia peppers.",
-    "Fără regim termic": "Yellow breadcrumbs, Knorr sauces, vegetable fat, gelatin, condimix.",
-    "Legume": "Potatoes for frying, spinach, peas, beans, cauliflower, broccoli.",
-    "Paste": "Barilla spaghetti, tagliatelle.",
-    "Produse lactate": "Butter, lavender cheese, pesto, gouda, edamer, black cheese.",
-    "Specialități": "Spring rolls, jalapenos snacks, spicy cheese."
+    "Condimente": "Oregano, garlic, black pepper, sweet paprika.",
+    "Paste": "Spaghetti, tagliatelle, penne.",
+    "Sosuri": "Sauces for any dish."
   }
 }

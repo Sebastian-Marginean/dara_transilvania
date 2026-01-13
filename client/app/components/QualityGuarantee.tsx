@@ -49,16 +49,20 @@ export default function QualityGuarantee({ locale }: QualityGuaranteeProps) {
           <h2 className="font-serif text-4xl md:text-5xl font-semibold text-yellow-500 mb-6 drop-shadow-lg">
             {locale === "ro" ? "Garanția Calității" : "Quality Guarantee"}
           </h2>
-          <p className="text-lg text-gray-200 leading-relaxed mb-4">
-            {locale === "ro"
-              ? "Garantăm calitatea produselor noastre prin standarde stricte și selecție atentă."
-              : "At Dara Transilvania, we are committed to providing the highest quality frozen food products. Our rigorous quality assurance processes ensure that every product meets our strict standards for freshness and safety. We source our ingredients from trusted suppliers and conduct regular quality checks to guarantee that you receive only the best."}
-          </p>
-          <p className="text-lg text-gray-200 leading-relaxed">
-            {locale === "ro"
-              ? "Satisfacția dumneavoastră este prioritatea noastră, și ne susținem produsele cu o garanție a calității care reflectă dedicația noastră pentru excelență."
-              : "Your satisfaction is our priority, and we stand behind our products with a quality guarantee that reflects our dedication to excellence."}
-          </p>
+          {(locale === "ro"
+            ? [
+                "Comandă cu încredere și bucură-te de produsele oferite de noi, cu livrare rapidă și servicii pe care te poți baza.",
+                "Produsele noastre premium sunt alegerea perfectă pentru a satisface orice gust.",
+                "Alătură-te nouă în călătoria culinară și descoperă gusturile lumii de acasă."
+              ]
+            : [
+                "Order with confidence and enjoy our products, with fast delivery and services you can rely on.",
+                "Our premium products are the perfect choice to satisfy any taste.",
+                "Join us on a culinary journey and discover the tastes of the world from home."
+              ]
+          ).map((p, i) => (
+            <p key={i} className="text-lg text-gray-200 leading-relaxed mb-4">{p}</p>
+          ))}
         </div>
       </div>
     </section>

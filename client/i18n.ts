@@ -5,7 +5,7 @@ export default async function getRequestConfig({
   requestLocale: Promise<string> | string;
   locale?: string;
 }) {
-  const resolvedLocale = locale ?? (await requestLocale);
+  const resolvedLocale = locale ?? (await requestLocale) ?? "ro";
 
   // load messages from the messages folder
   const messages = (await import(`./messages/${resolvedLocale}.json`)).default;

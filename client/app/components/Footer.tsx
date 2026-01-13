@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+
 type FooterProps = { locale: string };
 
 export default function Footer({ locale }: FooterProps) {
@@ -23,11 +26,7 @@ export default function Footer({ locale }: FooterProps) {
                 ? "Experimentați excelența în fiecare tăiere"
                 : "Experience excellence in every cut"}
             </h3>
-            <p className="text-gray-300 text-sm max-w-xs">
-              {isRO
-                ? "Descoperiți arta Angus cu Marble. Fabricate cu grijă, produsele noastre aduc cea mai bună carne de vită Angus pe masa dumneavoastră."
-                : "Discover the art of Angus with Marble. Carefully crafted, our products bring the best Angus beef to your table."}
-            </p>
+           
           </div>
         </div>
         {/* Mijloc: Contact */}
@@ -35,43 +34,29 @@ export default function Footer({ locale }: FooterProps) {
           <h4 className="text-lg font-semibold text-yellow-400 mb-1">
             {isRO ? "Informații de contact" : "Contact Information"}
           </h4>
-          <div className="text-gray-300 text-sm">
-            {isRO
-              ? "DARA TRANSILVANIA SRL, CUI: RO12345678, J12/345/2024, Cluj-Napoca, Str. Exemplu 1"
-              : "DARA TRANSILVANIA SRL, VAT: RO12345678, J12/345/2024, Cluj-Napoca, 1 Example Street"}
+          <div className="text-gray-300 text-sm mb-2">
+            SC Dara Transilvania SRL<br />
+            Mun. Blaj, str. Campul Libertății, nr. 25, jud. Alba
           </div>
-          <div className="flex items-center gap-2 mt-2">
-            {/* Telefon SVG */}
-            <svg width={20} height={20} fill="none" viewBox="0 0 24 24">
-              <path
-                stroke="#FFD700"
-                strokeWidth={2}
-                d="M6.5 4.5A2 2 0 0 1 8.5 3h7a2 2 0 0 1 2 1.5l1.5 6A2 2 0 0 1 17 12.5h-10A2 2 0 0 1 4.5 10.5l1.5-6Z"
-              />
-              <circle cx={12} cy={17} r={1.5} fill="#FFD700" />
-            </svg>
-            <span className="text-yellow-300 font-medium">+40 721 123 456</span>
-          </div>
-          <div className="flex items-center gap-2">
-            {/* Email SVG */}
-            <svg width={20} height={20} fill="none" viewBox="0 0 24 24">
-              <rect
-                x={4}
-                y={4}
-                width={16}
-                height={16}
-                rx={2}
-                stroke="#FFD700"
-                strokeWidth={2}
-              />
-              <path stroke="#FFD700" strokeWidth={2} d="M4 4l8 8 8-8" />
-            </svg>
-            <a
-              href="mailto:contact@daratransilvania.ro"
-              className="text-yellow-300 font-medium hover:underline"
-            >
-              contact@daratransilvania.ro
-            </a>
+          <div className="grid gap-2 text-sm">
+            {/* Alina Ioica */}
+            <div>
+              <span className="font-bold text-yellow-300">Alina Ioica</span> - {isRO ? "Administrator / Contabilitate" : "Administrator / Accounting"}<br />
+              <span className="text-gray-300">Tel: <a href="tel:+40741616249" className="underline">+40 741 616 249</a></span><br />
+              <span className="text-gray-300">Email: <a href="mailto:office@daratransilvania.com" className="underline">office@daratransilvania.com</a></span>
+            </div>
+            {/* Adrian Ioica */}
+            <div>
+              <span className="font-bold text-yellow-300">Adrian Ioica</span> - {isRO ? "Șef Departament Achiziții" : "Head of Procurement"}<br />
+              <span className="text-gray-300">Tel: <a href="tel:+40744390000" className="underline">+40 744 390 000</a></span><br />
+              <span className="text-gray-300">Email: <a href="mailto:adrian@daratransilvania.com" className="underline">adrian@daratransilvania.com</a></span>
+            </div>
+            {/* Darius Ioica */}
+            <div>
+              <span className="font-bold text-yellow-300">Darius Ioica</span><br />
+              <span className="text-gray-300">Tel: <a href="tel:+40773861499" className="underline">+40 773 861 499</a></span><br />
+              <span className="text-gray-300">Email: <a href="mailto:office@daratransilvania.com" className="underline">office@daratransilvania.com</a></span>
+            </div>
           </div>
         </div>
         {/* Dreapta: Social */}
@@ -88,39 +73,27 @@ export default function Footer({ locale }: FooterProps) {
               aria-label="Facebook"
               className="group"
             >
-              <img
-                src="/icons/facebook.svg"
-                alt="Facebook"
-                className="w-8 h-8 filter invert brightness-200 transition-transform duration-200 group-hover:scale-110 group-hover:sepia group-hover:drop-shadow-[0_0_8px_gold] group-hover:hue-rotate-10"
-              />
+              <FontAwesomeIcon icon={faFacebook} size="2x" className="text-yellow-400 transition-transform duration-200 group-hover:scale-110" />
             </a>
             {/* Instagram */}
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/dara_transilvania/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
               className="group"
             >
-              <img
-                src="/icons/instagram.svg"
-                alt="Instagram"
-                className="w-8 h-8 filter invert brightness-200 transition-transform duration-200 group-hover:scale-110 group-hover:sepia group-hover:drop-shadow-[0_0_8px_gold] group-hover:hue-rotate-10"
-              />
+              <FontAwesomeIcon icon={faInstagram} size="2x" className="text-pink-500 transition-transform duration-200 group-hover:scale-110" />
             </a>
             {/* WhatsApp */}
             <a
-              href="https://wa.me/40721123456"
+              href="https://wa.me/40741616249"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
               className="group"
             >
-              <img
-                src="/icons/whatsapp.svg"
-                alt="WhatsApp"
-                className="w-8 h-8 filter invert brightness-200 transition-transform duration-200 group-hover:scale-110 group-hover:sepia group-hover:drop-shadow-[0_0_8px_gold] group-hover:hue-rotate-10"
-              />
+              <FontAwesomeIcon icon={faWhatsapp} size="2x" className="text-green-500 transition-transform duration-200 group-hover:scale-110" />
             </a>
           </div>
         </div>

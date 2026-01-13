@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
+import "@fortawesome/fontawesome-svg-core/styles.css"; // Importă CSS-ul
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false; // Oprește adăugarea automată a CSS-ului de către Font Awesome, deoarece l-am importat manual
 
 export const metadata: Metadata = {
   title: "Dara Transilvania",

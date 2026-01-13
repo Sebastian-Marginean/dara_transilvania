@@ -13,7 +13,25 @@ app.use(express.json());
 app.get("/api/products", async (req, res) => {
   const { category } = req.query;
   const where = category ? { category: String(category) } : {};
-  const products = await prisma.product.findMany({ where });
+  const products = await prisma.product.findMany({
+    where,
+    select: {
+      id: true,
+      name: true,
+      name_en: true,
+      category: true,
+      description: true,
+      description_en: true,
+      price: true,
+      image: true,
+    },
+  });
+  if (products.length > 0) {
+    console.log("PRISMA PRODUCTS SAMPLE:", products[0]);
+    console.log("PRISMA PRODUCT KEYS:", Object.keys(products[0]));
+  } else {
+    console.log("PRISMA PRODUCTS: EMPTY RESULT");
+  }
   res.json(products);
 });
 
@@ -25,7 +43,7 @@ app.get("/api/categories", async (req, res) => {
       select: { category: true },
     });
     // Poți adăuga manual icon și descriere aici dacă vrei
-    res.json(categories.map((c) => c.category));
+    res.json(categories.map((c: { category: string }) => c.category));
   } catch (error) {
     res.status(500).json({ error: "Eroare la fetch categorii" });
   }

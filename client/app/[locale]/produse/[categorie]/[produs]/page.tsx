@@ -221,9 +221,6 @@ export default function ProductPage() {
     );
   }
 
-  const pricePer100g = product.price || 0;
-  const estimatedPrice = ((quantity / 100) * pricePer100g).toFixed(2);
-
   console.log("Produs din URL:", produs);
 
   return (
@@ -236,7 +233,7 @@ export default function ProductPage() {
         <div className="backdrop-blur-md bg-black/70 border border-yellow-500/20 rounded-3xl shadow-2xl p-8 sm:p-12 flex flex-col">
           <div className="flex flex-col md:flex-row items-center gap-12 mb-8">
             <img
-              src="/images/imagine-Dara.png"
+              src="/images/dara-logo.png"
               alt="Produs Dara"
               className="w-full md:w-[400px] h-[400px] object-cover rounded-2xl shadow-lg"
             />
@@ -248,13 +245,6 @@ export default function ProductPage() {
               <h1 className="font-serif text-4xl font-bold text-yellow-400 drop-shadow mb-2">
                 {product.name}
               </h1>
-              <div className="flex items-center gap-4 mb-2">
-                <span className="text-yellow-300 font-bold text-xl">
-                  {product.price !== undefined && product.price !== null
-                    ? `${product.price} lei / 100g`
-                    : "Preț indisponibil"}
-                </span>
-              </div>
 
               <div className="bg-black/20 border border-yellow-500/30 rounded-lg p-4 mb-4">
                 <span className="font-bold text-red-400">
@@ -298,17 +288,6 @@ export default function ProductPage() {
                       Minim 100g
                     </span>
                   </div>
-                  <div className="flex flex-col items-center bg-black/40 rounded-xl p-6 border border-yellow-500/20 shadow-lg">
-                    <label className="text-yellow-300 font-semibold mb-2 text-lg">
-                      Preț estimativ
-                    </label>
-                    <span className="text-yellow-400 font-bold text-2xl">
-                      {product.price ? `${estimatedPrice} lei` : "—"}
-                    </span>
-                    <span className="text-gray-400 mt-2 text-sm">
-                      pentru {quantity}g la {product.price} lei / 100g
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -337,12 +316,15 @@ export default function ProductPage() {
             Produse similare
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {similar.map((prod) => (
-              <Link
+            {similar.map((prod, index) => (
+              <div
                 key={prod.name}
-                href={`/${locale}/produse/${categorie}/${encodeURIComponent(
-                  prod.name
-                )}`}
+                className="group block h-full cursor-pointer"
+                style={{ animationDelay: `${index * 100}ms` }}
+                onClick={() => {
+                  // Poți adăuga aici o funcție pentru a afișa mai multe detalii
+                  console.log("Clicked on product:", prod.name);
+                }}
               >
                 <div className="bg-black/40 rounded-xl p-6 border border-yellow-500/10 shadow hover:shadow-yellow-500/20 transition-shadow duration-200 flex flex-col items-center">
                   <img
@@ -356,8 +338,30 @@ export default function ProductPage() {
                   <p className="text-gray-200 text-center text-sm mt-1">
                     {prod.description}
                   </p>
+                  <div className="opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="inline-flex items-center text-yellow-400 text-sm font-semibold">
+                      <span>
+                        {locale === "ro"
+                          ? "Click pentru detalii"
+                          : "Click for details"}
+                      </span>
+                      <svg
+                        className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

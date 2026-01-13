@@ -1,7 +1,6 @@
 import AboutSection from "../components/AboutSection";
 import ProductCategories from "../components/ProductCategories";
 import QualityGuarantee from "../components/QualityGuarantee";
-import MiniContact from "../components/MiniContact";
 
 export default async function HomePage({
   params,
@@ -20,9 +19,6 @@ export default async function HomePage({
 
       {/* 3. Garanția calității */}
       <QualityGuarantee locale={locale} />
-
-      {/* 4. Mini contact */}
-      <MiniContact locale={locale} />
     </main>
   );
 }
