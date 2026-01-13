@@ -1,11 +1,20 @@
 import React from "react";
 
-export default function AnunturiPage({ params }: { params: { locale: string } }) {
-  const locale = params?.locale || 'ro';
+// 1. Facem componenta async
+// 2. Definim tipul params ca Promise
+export default async function AnunturiPage({ 
+  params 
+}: { 
+  params: Promise<{ locale: string }> 
+}) {
+  // 3. Așteptăm rezolvarea parametrilor
+  const { locale } = await params;
+  const currentLocale = locale || 'ro';
+
   return (
     <main className="min-h-screen p-4 md:p-8 flex flex-col items-center mt-24">
       <div className="max-w-3xl w-full bg-black/40 rounded-3xl p-8 md:p-12 border border-yellow-500/20 shadow-2xl mx-auto">
-        {locale === 'ro' ? (
+        {currentLocale === 'ro' ? (
           <>
             <h1 className="text-3xl md:text-4xl font-bold text-yellow-500 mb-8 text-center">Comunicat de presă începere proiect</h1>
             <div className="space-y-6 text-lg text-white/90">
