@@ -980,7 +980,7 @@ async function main() {
       {
     name: "Boia dulce 100 S, 1kg",
     name_en: "Sweet Paprika 100 S, 1kg",
-    category: "Condiment & FRT",
+    category: "Condimente & FRT",
     description: "Boia dulce de calitate superioară.",
     description_en: "High quality sweet paprika.",
     price: 35,
@@ -989,7 +989,7 @@ async function main() {
   {
     name: "Busuioc maruntit, 1kg",
     name_en: "Crushed Basil, 1kg",
-    category: "Condiment & FRT",
+    category: "Condimente & FRT",
     description: "Busuioc mărunțit aromat.",
     description_en: "Aromatic crushed basil.",
     price: 30,
@@ -998,7 +998,7 @@ async function main() {
   {
     name: "Condimente gustos de legume, 1kg",
     name_en: "Vegetable Seasoning Mix, 1kg",
-    category: "Condiment & FRT",
+    category: "Condimente & FRT",
     description: "Amestec de condimente gustos de legume.",
     description_en: "Savory vegetable seasoning mix.",
     price: 30,
@@ -1007,7 +1007,7 @@ async function main() {
   {
     name: "Oregano ambalat la punga de 1kg",
     name_en: "Dried Oregano, 1kg bag",
-    category: "Condiment & FRT",
+    category: "Condimente & FRT",
     description: "Oregano uscat la pungă.",
     description_en: "Dried oregano in a bag.",
     price: 31,
@@ -1016,7 +1016,7 @@ async function main() {
   {
     name: "Piper negru macinat, MQ 1kg",
     name_en: "Ground Black Pepper MQ, 1kg",
-    category: "Condiment & FRT",
+    category: "Condimente & FRT",
     description: "Piper negru măcinat.",
     description_en: "Ground black pepper.",
     price: 74,
@@ -1025,7 +1025,7 @@ async function main() {
   {
     name: "Usturoi granule, 1kg",
     name_en: "Granulated Garlic, 1kg",
-    category: "Condiment & FRT",
+    category: "Condimente & FRT",
     description: "Usturoi granulat aromat.",
     description_en: "Aromatic granulated garlic.",
     price: 34,
@@ -1034,7 +1034,7 @@ async function main() {
   {
     name: "Pesmet galben, sac de 20kg",
     name_en: "Yellow Breadcrumbs, 20kg bag",
-    category: "Condiment & FRT",
+    category: "Condimente & FRT",
     description: "Pesmet galben crocant.",
     description_en: "Crispy yellow breadcrumbs.",
     price: 10,
@@ -1043,7 +1043,7 @@ async function main() {
   {
     name: "Knorr crema de otet balsamic, sticla de 200ml",
     name_en: "Knorr Balsamic Vinegar Glaze, 200ml",
-    category: "Condiment & FRT",
+    category: "Condimente & FRT",
     description: "Cremă de oțet balsamic Knorr.",
     description_en: "Knorr balsamic vinegar glaze.",
     price: 27,
@@ -1052,7 +1052,7 @@ async function main() {
   {
     name: "Desert topping de cacao carte d'or 1kg",
     name_en: "Carte d'Or Cocoa Dessert Topping, 1kg",
-    category: "Condiment & FRT",
+    category: "Condimente & FRT",
     description: "Topping de cacao pentru deserturi.",
     description_en: "Cocoa topping for desserts.",
     price: 57,
@@ -1061,7 +1061,7 @@ async function main() {
   {
     name: "Grasime vegetala pentru gatit gran cucina, 1L",
     name_en: "Gran Cucina Vegetable Cooking Cream, 1L",
-    category: "Condiment & FRT",
+    category: "Condimente & FRT",
     description: "Grăsime vegetală lichidă pentru gătit.",
     description_en: "Liquid vegetable cooking base.",
     price: 16,
@@ -1070,7 +1070,7 @@ async function main() {
   {
     name: "Ulei de palmier 18L",
     name_en: "Palm Oil, 18L",
-    category: "Condiment & FRT",
+    category: "Condimente & FRT",
     description: "Ulei de palmier profesional pentru prăjit.",
     description_en: "Professional palm oil for frying.",
     price: 202,
