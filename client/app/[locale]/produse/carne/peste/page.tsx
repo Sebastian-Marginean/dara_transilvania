@@ -17,8 +17,8 @@ export default function SeafoodProductsPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data, error } = await supabase
-          .from("product")
+            const { data, error } = await supabase
+              .from("Product")
           .select("*")
           .or("category.eq.Peste,category.eq.Peste si Fructe de Mare,category.eq.Fructe de mare,category.eq.Seafood,category.eq.Fish");
         if (error) {

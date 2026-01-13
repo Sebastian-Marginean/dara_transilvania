@@ -17,8 +17,8 @@ export default function PorkProductsPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data, error } = await supabase
-          .from("product")
+            const { data, error } = await supabase
+              .from("Product")
           .select("*")
           .eq("category", "Porc");
         if (error) {
