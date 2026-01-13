@@ -43,11 +43,11 @@ async function main() {
     image: "muschi-de-vita.jpeg"
   },
   {
-    name: "Antricot de vita cu os",
-    name_en: "Bone-in Beef Ribeye",
+    name: "Antricot de vita cu os (Tomahawk)",
+    name_en: "Tomahawk steak",
     category: "Vita",
-    description: "Antricot de vită cu os, perfect pentru gătire lentă sau la grătar.",
-    description_en: "Bone-in beef ribeye, perfect for slow cooking or grilling.",
+    description: "Antricot de vită cu os (Tomahawk), perfect pentru gătire lentă sau la grătar.",
+    description_en: "Tomahawk steak, perfect for slow cooking or grilling.",
     price: 39,
     image: "antricot-de-vita.jpeg"
   },
@@ -520,7 +520,7 @@ async function main() {
     image: "cartofi-super-fries-14mm.jpeg"
   },
   {
-    name: "Cartofi 7x7 / 2.5kg",
+    name: "Cartofi 7x7mm / 2.5kg",
     name_en: "Fries 7x7mm / 2.5kg",
     category: "Cartofi",
     description: "Cartofi prăjiți tăietură clasică pai 7x7mm.",
@@ -529,8 +529,8 @@ async function main() {
     image: "cartofi-7mm.jpeg"
   },
   {
-    name: "Cartofi pentru prajit premier 9.6/9.6 / 2.5kg",
-    name_en: "Premier Fries 9.6/9.6 / 2.5kg",
+    name: "Cartofi pentru prajit premier 9mm / 2.5kg",
+    name_en: "Premier Fries 9mm / 2.5kg",
     category: "Cartofi",
     description: "Cartofi Premier Gold, tăietură 9.6mm.",
     description_en: "Premier Gold fries, 9.6mm cut.",
@@ -538,8 +538,8 @@ async function main() {
     image: "cartofi-premier-gold-9mm.jpeg"
   },
   {
-    name: 'Cartofi pentru prajit clasa "a" coated 10/10 mm /2.5kg',
-    name_en: 'Class "A" Coated Fries 10/10 mm / 2.5kg',
+    name: 'Cartofi pentru prajit clasa "a" coated 10/10mm /2.5kg',
+    name_en: 'Class "A" Coated Fries 10/10mm / 2.5kg',
     category: "Cartofi",
     description: "Cartofi prăjiți coated (înveliți), extra crocanți.",
     description_en: "Coated fries, extra crispy.",
@@ -556,8 +556,8 @@ async function main() {
     image: "cartofi-super-fries-10-pe-20mm.jpeg"
   },
   {
-    name: "Cartofi pentru prajit steak house 10/20 2.5kg",
-    name_en: "Steak House Fries 10/20 2.5kg",
+    name: "Cartofi pentru prajit steak house 10/20mm 2.5kg",
+    name_en: "Steak House Fries 10/20mm 2.5kg",
     category: "Cartofi",
     description: "Cartofi Steak House pentru un aspect rustic.",
     description_en: "Steak House fries for a rustic look.",
@@ -567,8 +567,8 @@ async function main() {
 
   // --- SPECIALITATI CARTOFI ---
   {
-    name: "Cartofi pentru prajit rustic cu coaja 10/10 mm 600 gr",
-    name_en: "Rustic Skin-on Fries 10/10 mm 600g",
+    name: "Cartofi pentru prajit rustic cu coaja 10/10mm 600 gr",
+    name_en: "Rustic Skin-on Fries 10/10mm 600g",
     category: "Cartofi",
     description: "Cartofi rustici cu coajă, plini de gust.",
     description_en: "Rustic skin-on fries, full of flavor.",
@@ -665,8 +665,8 @@ async function main() {
 
   // --- 2. SPECIALITATI ---
   {
-    name: 'Cascaval cu nuca "dilano", grasime de 50%',
-    name_en: '"Dilano" Walnut Cheese, 50% fat',
+    name: 'Cascaval cu nuca "Visser Kaas", grasime de 50%',
+    name_en: '"Visser Kaas" Walnut Cheese, 50% fat',
     category: "Lactate",
     description: "Cașcaval cu miez de nucă.",
     description_en: "Cheese with walnut kernels.",
@@ -674,8 +674,8 @@ async function main() {
     image: "cascaval-walnut-cheese.jpeg"
   },
   {
-    name: 'Cascaval pesto verde "dilano", grasime de 50%',
-    name_en: '"Dilano" Green Pesto Cheese, 50% fat',
+    name: 'Cascaval pesto verde "Visser Kaas", grasime de 50%',
+    name_en: '"Visser Kaas" Green Pesto Cheese, 50% fat',
     category: "Lactate",
     description: "Cașcaval cu pesto verde.",
     description_en: "Cheese with green pesto.",
@@ -683,8 +683,8 @@ async function main() {
     image: "cascaval-green-pesto.jpeg"
   },
   {
-    name: 'Cascaval cu lavanda "dilano", grasime de 50%',
-    name_en: '"Dilano" Lavender Cheese, 50% fat',
+    name: 'Cascaval cu lavanda "Visser Kaas", grasime de 50%',
+    name_en: '"Visser Kaas" Lavender Cheese, 50% fat',
     category: "Lactate",
     description: "Cașcaval cu lavandă.",
     description_en: "Cheese with lavender.",
@@ -692,8 +692,8 @@ async function main() {
     image: "cascaval-laveneder-cheese.jpeg"
   },
   {
-    name: 'Cascaval negru cu lamaie "dilano", grasime de 50%',
-    name_en: '"Dilano" Black Lemon Cheese, 50% fat',
+    name: 'Cascaval negru cu lamaie "Visser Kaas", grasime de 50%',
+    name_en: '"Visser Kaas" Black Lemon Cheese, 50% fat',
     category: "Lactate",
     description: "Cașcaval negru cu lămâie.",
     description_en: "Black cheese with lemon.",
@@ -996,8 +996,8 @@ async function main() {
     image: "busuioc-maruntit.jpg"
   },
   {
-    name: "Condimente gustos de legume, 1kg",
-    name_en: "Vegetable Seasoning Mix, 1kg",
+    name: "Condimix, 1kg",
+    name_en: "Condimix, 1kg",
     category: "Condimente & FRT",
     description: "Amestec de condimente gustos de legume.",
     description_en: "Savory vegetable seasoning mix.",
@@ -1112,8 +1112,8 @@ async function main() {
       // === SPECIALITĂȚI ȘI PREPARATE ===
       // =================================================================================
       {
-    name: "Cosulete de cartofi cu branza si verdeturi 0.976kg",
-    name_en: "Potato Baskets with Cheese & Herbs, 0.976kg",
+    name: "Cosulete de cartofi cu branza si verdeturi 1kg",
+    name_en: "Potato Baskets with Cheese & Herbs, 1kg",
     category: "Specialitati",
     description: "Coșulețe de cartofi umplute cu brânză.",
     description_en: "Potato baskets filled with cheese and herbs.",
@@ -1261,11 +1261,11 @@ async function main() {
       // === SOSURI ===
       // =================================================================================
      {
-    name: "Sos de roșii (5kg)",
-    name_en: "Tomato Sauce (5kg)",
+    name: "Ketchup (5kg/10kg)",
+    name_en: "Ketchup (5kg/10kg)",
     category: "Sosuri",
-    description: "Sos de roșii clasic la ambalaj mare de 5kg.",
-    description_en: "Classic tomato sauce in a large 5kg pack.",
+    description: "Sos de roșii Ketchup la ambalaj mare de 5kg sau 10kg.",
+    description_en: "Classic Ketchup sauce in a large 5kg or 10kg pack.",
     price: 0, // De actualizat pretul
     image: "sos-de rosi-5kg.jpeg"
   },
