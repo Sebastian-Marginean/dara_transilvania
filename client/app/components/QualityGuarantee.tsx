@@ -34,7 +34,7 @@ export default function QualityGuarantee({ locale }: QualityGuaranteeProps) {
           }`}
         >
           <img
-            src="/images/Dara-logo.png"
+            src="/images/dara-logo.png"
             alt="Dara Transilvania Logo"
             className="max-h-56 md:max-h-64 object-contain drop-shadow-lg"
             style={{ transition: "all 0.7s cubic-bezier(.4,0,.2,1)" }}
