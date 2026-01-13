@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { supabase } from "../../../../../supabaseClient";
 
 export default function ChickenProductsPage() {
   const params = useParams();
@@ -16,75 +17,23 @@ export default function ChickenProductsPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // Încearcă diferite variante pentru API
-        let response = await fetch(
-          `http://localhost:8000/api/products?category=Pui`
-        );
-
-        if (!response.ok) {
-          // Dacă nu merge cu Pui, încearcă cu toate produsele și filtrează
-          response = await fetch("http://localhost:8000/api/products");
-        }
-
-        if (response.ok) {
-          const data = await response.json();
-          console.log("Raw data:", data);
-
-          // Filtrează produsele de pui
-          const chickenProducts = data.filter(
-            (product: any) =>
-              product.category === "Pui" ||
-              product.subcategory === "Pui" ||
-              (product.name && product.name.toLowerCase().includes("pui")) ||
-              (product.name &&
-                product.name.toLowerCase().includes("chicken")) ||
-              (product.name && product.name.toLowerCase().includes("găină"))
-          );
-
-          console.log("Filtered chicken products:", chickenProducts);
-          setProducts(chickenProducts);
-        } else {
-          console.error("Failed to fetch products");
+        const { data, error } = await supabase
+          .from("product")
+          .select("*")
+          .eq("category", "Pui");
+        if (error) {
+          console.error("Supabase error:", error);
           setProducts([]);
+        } else {
+          setProducts(data || []);
         }
       } catch (error) {
-        console.error("Error fetching products:", error);
-        // Folosește date mock dacă API-ul nu funcționează
-        setProducts([
-          {
-            id: 1,
-            name: "Piept de pui",
-            price: "28.50",
-            description: "Piept de pui fără os, perfect pentru diete sănătoase",
-            inStock: true,
-          },
-          {
-            id: 2,
-            name: "Pulpe de pui",
-            price: "22.00",
-            description: "Pulpe de pui suculente, ideale pentru copt",
-            inStock: true,
-          },
-          {
-            id: 3,
-            name: "Aripi de pui",
-            price: "18.75",
-            description: "Aripi de pui marinate, perfecte pentru grătar",
-            inStock: true,
-          },
-          {
-            id: 4,
-            name: "Pui întreg",
-            price: "25.00",
-            description: "Pui întreg proaspăt, crescut în condiții naturale",
-            inStock: true,
-          },
-        ]);
+        console.error("Error fetching products from Supabase:", error);
+        setProducts([]);
       } finally {
         setLoading(false);
       }
     };
-
     fetchProducts();
   }, []);
 

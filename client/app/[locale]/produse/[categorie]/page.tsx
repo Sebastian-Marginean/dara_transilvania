@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { supabase } from "../../../../supabaseClient";
 
 // Maparea categoriilor cu iconuri și clase CSS complete
 const categoryConfig: Record<
@@ -173,49 +174,21 @@ export default function CategoryPage() {
         console.log("Fetching products for category:", categorie);
 
         // Încearcă endpoint-ul principal cu filtru de categorie
-        let response = await fetch(
-          `http://localhost:8000/api/products?category=${encodeURIComponent(
-            categorie
-          )}`
-        );
 
-        if (!response.ok) {
-          // Dacă nu merge cu query param, încearcă să iei toate produsele și să filtrezi
-          console.log("Category filter failed, fetching all products...");
-          response = await fetch("http://localhost:8000/api/products");
-        }
 
-        if (response.ok) {
-          const data = await response.json();
-          console.log("Raw data received:", data);
 
-          // Filtrează produsele pentru categoria curentă
-          const filteredProducts = data.filter((product: any) => {
-            const matchesCategory =
-              product.category === categorie ||
-              product.category === categorie.toLowerCase() ||
-              product.category === categorie.toUpperCase();
-            const matchesSubcategory =
-              product.subcategory === categorie ||
-              product.subcategory === categorie.toLowerCase() ||
-              product.subcategory === categorie.toUpperCase();
 
-            console.log(
-              `Product: ${product.name}, Category: ${
-                product.category
-              }, Subcategory: ${product.subcategory}, Matches: ${
-                matchesCategory || matchesSubcategory
-              }`
-            );
 
-            return matchesCategory || matchesSubcategory;
-          });
 
-          console.log("Filtered products:", filteredProducts);
-          setProducts(filteredProducts);
-        } else {
-          console.error("Failed to fetch products:", response.status);
+        const { data, error } = await supabase
+          .from("product")
+          .select("*")
+          .or(`category.eq.${categorie},subcategory.eq.${categorie}`);
+        if (error) {
+          console.error("Supabase error:", error);
           setProducts([]);
+        } else {
+          setProducts(data || []);
         }
       } catch (error) {
         console.error("Error fetching products:", error);
