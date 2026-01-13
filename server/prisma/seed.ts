@@ -22,7 +22,7 @@ async function main() {
     description: "Antricot de vită dezosat și curățat, ideal pentru friptură la grătar sau tigaie.",
     description_en: "Boneless beef ribeye, cleaned and trimmed, ideal for grilling or pan frying.",
     price: 50,
-    image: "antricot-de-vita.jpeg"
+    image: "antricot-de-vita-fara-os.jpg"
   },
   {
     name: "Vrabioara de vita fasonata, fara os",
@@ -49,7 +49,7 @@ async function main() {
     description: "Antricot de vită cu os (Tomahawk), perfect pentru gătire lentă sau la grătar.",
     description_en: "Tomahawk steak, perfect for slow cooking or grilling.",
     price: 39,
-    image: "antricot-de-vita.jpeg"
+    image: "antricot-de-vita-cu-os.jpg"
   },
   {
     name: "T-bone de vita",
