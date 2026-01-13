@@ -1,6 +1,3 @@
-import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
-import type { Metadata } from "next";
 import AboutSection from "@/components/AboutSection";
 
 // Funcția care generează metadate unice pentru SEO, folosind traducerile
@@ -9,7 +6,7 @@ import AboutSection from "@/components/AboutSection";
 
 export default function DespreNoiPage() {
   // Hook-ul care încarcă traducerile pentru pagina curentă
-  const t = useTranslations("AboutUsPage");
+  // const t = useTranslations("AboutUsPage"); // eliminat, nu e folosit
 
   return (
     <main className="min-h-screen p-4 md:p-8 flex flex-col items-center pt-32">

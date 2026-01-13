@@ -83,7 +83,7 @@ export default function ProductsPage() {
 
           {/* Categories Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {processedCategories.map((cat, index) => (
+            {processedCategories.map((cat) => (
               <Link
                 key={cat}
                 href={
