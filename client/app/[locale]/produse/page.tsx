@@ -152,7 +152,7 @@ export default function ProductsPage() {
                       {/* Button - Fixed position at bottom */}
                       <div className="flex-shrink-0">
                         <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-full text-yellow-300 font-semibold group-hover:from-yellow-500/20 group-hover:to-yellow-600/20 group-hover:border-yellow-400/50 transition-all duration-300">
-                          <span>Vezi produsele</span>
+                          <span>{locale === "ro" ? "Vezi produsele" : "View products"}</span>
                           <svg
                             className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
                             fill="none"

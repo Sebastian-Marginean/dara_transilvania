@@ -245,6 +245,7 @@ export default function ContactPage() {
               {/* Darius Ioica */}
               <div className="bg-black/40 rounded-2xl p-6 border border-yellow-500/10 shadow">
                 <h3 className="text-lg font-bold text-yellow-200 mb-1">Darius Ioica</h3>
+                 <p className="text-gray-300 mb-1">{locale === "ro" ? "Agent de vânzări" : "Sales agent"}</p>
                 <p className="text-gray-400 mb-1">SC Dara Transilvania SRL</p>
                 <p className="text-gray-300 mb-1">Tel: <a href="tel:+40773861499" className="underline">+40 773 861 499</a></p>
                 <p className="text-gray-300">Email: <a href="mailto:office@daratransilvania.com" className="underline">office@daratransilvania.com</a></p>
