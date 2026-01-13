@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title: "Dara Transilvania",
   description: "Distribuție Produse Alimentare Congelate",
   icons: {
-    icon: "client/images/dara-logo6.png",
-    shortcut: "/images/dara-logo6.png",
-    apple: "client/images/dara-logo6.png",
+    icon: "/images/dara-logo6.PNG",
+    shortcut: "/images/dara-logo6.PNG",
+    apple: "/images/dara-logo6.PNG",
   },
 };
 
