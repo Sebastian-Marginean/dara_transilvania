@@ -14,9 +14,11 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>; // 1. Schimbă tipul aici
 }) {
-  const { locale: rawLocale } = params;
+  // 2. Așteaptă rezolvarea params
+  const { locale: rawLocale } = await params; 
+  
   const locale = rawLocale === "ro" || rawLocale === "en" ? rawLocale : "ro";
   const messages = await getMessages();
 
