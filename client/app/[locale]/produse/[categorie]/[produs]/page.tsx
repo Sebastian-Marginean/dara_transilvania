@@ -19,7 +19,7 @@ export default function ProductPage() {
     const fetchProductData = async () => {
       // Fetch product details by name
       const { data: productData, error: productError } = await supabase
-        .from("product")
+        .from("Product")
         .select("*")
         .eq("name", produs)
         .single();
@@ -31,7 +31,7 @@ export default function ProductPage() {
 
       // Fetch similar products by category, excluding current product
       const { data: similarData, error: similarError } = await supabase
-        .from("product")
+        .from("Product")
         .select("*")
         .eq("category", categorie);
       if (similarError) {

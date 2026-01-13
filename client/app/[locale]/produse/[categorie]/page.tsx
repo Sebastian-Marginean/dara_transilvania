@@ -174,16 +174,16 @@ export default function CategoryPage() {
         console.log("Fetching products for category:", categorie);
 
         // Încearcă endpoint-ul principal cu filtru de categorie
-
-
-
-
-
+        supabase
+          .from("Product")
+          .select("*")
+          .eq("category", categorie)
+          .then(console.log);
 
         const { data, error } = await supabase
-          .from("product")
+          .from("Product")
           .select("*")
-          .or(`category.eq.${categorie},subcategory.eq.${categorie}`);
+          .eq("category", categorie);
         if (error) {
           console.error("Supabase error:", error);
           setProducts([]);
@@ -238,6 +238,7 @@ export default function CategoryPage() {
 
   return (
     <>
+      
       {/* Stilizare scroll bar pentru modal */}
       <style jsx global>{`
         /* Stilizare scroll bar pentru modal */

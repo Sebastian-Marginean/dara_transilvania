@@ -38,17 +38,20 @@ export default function ProductsPage() {
   const locale = typeof params.locale === "string" ? params.locale : "ro";
 
   useEffect(() => {
-    // Fetch categories from Supabase
+    // Fetch categories from Supabase (distinct category from Product table)
     async function fetchCategories() {
       const { data, error } = await supabase
-        .from('categories')
-        .select('name');
+        .from("Product")
+        .select("category");
       if (error) {
         console.error('Supabase error:', error);
         setRawCategories([]);
       } else {
-        // Assuming 'name' is the category name field
-        setRawCategories(data.map((cat: { name: string }) => cat.name));
+        // Debug: vezi ce categorii vin din Supabase
+        console.log("Categorii din Supabase:", data);
+        // Elimină duplicatele
+        const uniqueCategories = Array.from(new Set(data.map((cat: { category: string }) => cat.category)));
+        setRawCategories(uniqueCategories);
       }
     }
     fetchCategories();
@@ -95,6 +98,11 @@ export default function ProductsPage() {
 
           {/* Categories Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {processedCategories.length === 0 && (
+              <div className="text-center text-yellow-300 text-xl py-12">
+                Nu există categorii disponibile.
+              </div>
+            )}
             {processedCategories.map((cat) => (
               <Link
                 key={cat}

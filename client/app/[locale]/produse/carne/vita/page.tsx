@@ -18,13 +18,14 @@ export default function BeefProductsPage() {
     const fetchProducts = async () => {
       try {
         const { data, error } = await supabase
-          .from("product")
+          .from("Product")
           .select("*")
           .eq("category", "Vita");
         if (error) {
           console.error("Supabase error:", error);
           setProducts([]);
         } else {
+            console.log("Supabase data:", data);
           setProducts(data || []);
         }
       } catch (error) {
