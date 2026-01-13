@@ -5,6 +5,12 @@
     "about": "Despre noi",
     "contact": "Contact"
   },
+  "Navigation": {
+    "home": "Acasă",
+    "products": "Produse",
+    "about": "Despre noi",
+    "contact": "Contact"
+  },
   "HomePage": {
     "title": "Dara Transilvania",
     "subtitle": "Distribuție Produse Alimentare Congelate",
@@ -12,5 +18,32 @@
     "aboutUsText": "Dara Transilvania este lider în distribuția de produse alimentare congelate în România. Oferim o gamă variată de carne, legume și semipreparate pentru sectorul HoReCa.",
     "productsButton": "Vezi Produsele",
     "contactButton": "Contactează-ne"
+  },
+  "ProductsPage": {
+    "title": "Produse",
+    "subtitle": "Alege din categoriile noastre",
+    "backHome": "Înapoi la Acasă"
+  },
+  "categories": {
+    "Carne": "Carne",
+    "Condimente": "Condimente",
+    "Conserve": "Conserve",
+    "Fără regim termic": "Fără regim termic",
+    "Legume": "Legume",
+    "Paste": "Paste",
+    "Produse lactate": "Produse lactate",
+    "Specialități": "Specialități"
+    ,"Sosuri": "Sosuri"
+  },
+  "categoryDescriptions": {
+    "Carne": "Vită, porc, pui, pește și fructe de mare.",
+    "Condimente": "Oregano, usturoi, piper negru, boia dulce.",
+    "Conserve": "Măsline negre, sfeclă roșie, castraveți murați, ardei capia copt.",
+    "Fără regim termic": "Pesmet galben, sosuri Knorr, grăsime vegetală, gelatină, condimix.",
+    "Legume": "Spanac, mazăre, fasole, conopidă, broccoli și alte amestecuri",
+    "Paste": "Spaghetti, tagliatelle, penne.",
+    "Produse lactate": "Unt, cașcaval cu lavandă, pesto, gouda, edamer, negru.",
+    "Specialități": "Rulouri de primăvară, jalapenos snacks, brânză picantă."
+    ,"Sosuri": "Sosuri pentru orice preparat: ketchup, maioneză, barbecue, usturoi."
   }
 }

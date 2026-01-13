@@ -3,3 +3,16 @@ node_modules
 .env
 
 /generated/prisma
+
+# Build and cache folders
+.next
+.cache
+dist
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Ignore images (optional, dacă nu vrei să fie în repo)
+# client/public/images/
+# client/public/images/produse/

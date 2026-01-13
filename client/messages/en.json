@@ -5,6 +5,12 @@
     "about": "About us",
     "contact": "Contact"
   },
+  "Navigation": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About us",
+    "contact": "Contact"
+  },
   "HomePage": {
     "title": "Dara Transilvania",
     "subtitle": "Frozen Food Distribution",
@@ -12,5 +18,34 @@
     "aboutUsText": "Dara Transilvania is a leader in frozen food distribution in Romania. We offer a wide range of meat, vegetables and semi-prepared products for the HoReCa sector.",
     "productsButton": "View Products",
     "contactButton": "Contact Us"
+  },
+  "ProductsPage": {
+    "title": "Products",
+    "subtitle": "Choose from our categories",
+    "backHome": "Back to Home"
+  },
+  "categories": {
+    "Carne": "Meat",
+    "Peste": "Fish",
+    "Cartofi": "Potatoes",
+    "Lactate": "Dairy",
+    "Legume": "Vegetables",
+    "Conserve": "Canned",
+    "Condimente": "Spices",
+    "Paste": "Pasta",
+    "Sosuri": "Sauces",
+    "Specialitati": "Specialties"
+  },
+  "categoryDescriptions": {
+    "Carne": "Beef, pork, chicken, fish",
+    "Peste": "Fresh fish and seafood.",
+    "Cartofi": "Potato products.",
+    "Specialitati": "Products from the specialties category",
+    "Lactate": "Products from the dairy category",
+    "Legume": "Spinach, peas, beans, cauliflower, broccoli and other mixtures.",
+    "Conserve": "Black olives, beetroot, pickles, roasted capia peppers.",
+    "Condimente": "Oregano, garlic, black pepper, sweet paprika.",
+    "Paste": "Spaghetti, tagliatelle, penne.",
+    "Sosuri": "Sauces for any dish."
   }
 }

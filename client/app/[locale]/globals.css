@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* Use CSS variable for header height so content doesn't sit under the fixed header */
+  --header-height: 5rem;
+  padding-top: var(--header-height);
+  --bg-overlay-alpha: 0.12; /* lighter overlay so background image shows more */
+
+  color: #f5f5f5; /* default warm white text */
+}
+
+/* Subtle black marble with gold stripes */
+/* Full page black marble background with subtle gold veins */
+.marble-bg,
+body {
+  background-color: #070707;
+  /* add a subtle dark overlay as first layer to improve overall contrast */
+  background-image: linear-gradient(
+      rgba(0, 0, 0, var(--bg-overlay-alpha)),
+      rgba(0, 0, 0, var(--bg-overlay-alpha))
+    ),
+    radial-gradient(
+      ellipse at 20% 10%,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(255, 255, 255, 0) 35%
+    ),
+    radial-gradient(
+      ellipse at 80% 80%,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(255, 255, 255, 0) 40%
+    ),
+    linear-gradient(
+      110deg,
+      rgba(212, 175, 55, 0.06) 0%,
+      rgba(212, 175, 55, 0.02) 20%,
+      transparent 30%,
+      transparent 70%,
+      rgba(212, 175, 55, 0.03) 90%
+    ),
+    url("/images/BackgroundIMG@2x.webp") center/cover no-repeat,
+    url("/images/BackgroundIMG@1x.webp") center/cover no-repeat,
+    url("/images/BackgroundIMG.png") center/cover no-repeat,
+    url("/images/veins.svg"); /* user-provided background image + veins overlay */
+  /* Use normal blend mode so overlay layers don't overly darken the image */
+  background-blend-mode: normal;
+  background-size: cover, cover, cover, 200% 200%, cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Debug helper: apply this class to the main wrapper to see only the raw image (no overlay) */
+.debug-bg {
+  background-image: url("/images/BackgroundIMG@2x.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+/* allow adding debug-bg to marble-bg to quickly see raw image */
+.marble-bg.debug-bg {
+  background-image: url("/images/BackgroundIMG@2x.webp");
+}
+
+/* Responsive fallback: if webp not available, PNG will be used. If you generate WebP files with the script, they'll be preferred on larger screens. */
+@media (max-width: 640px) {
+  .marble-bg {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, var(--bg-overlay-alpha)),
+        rgba(0, 0, 0, var(--bg-overlay-alpha))
+      ),
+      radial-gradient(
+        ellipse at 20% 10%,
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(255, 255, 255, 0) 35%
+      ),
+      radial-gradient(
+        ellipse at 80% 80%,
+        rgba(255, 255, 255, 0.02) 0%,
+        rgba(255, 255, 255, 0) 40%
+      ),
+      url("/images/BackgroundIMG@1x.webp");
+  }
+}
+
+/* helper to apply site background to a container if needed */
+.site-bg {
+  background-image: inherit;
+  background-color: inherit;
+  background-size: cover;
+  background-position: center;
+}
+
+.container .bg-dark-overlay {
+  background: rgba(10, 10, 10, 0.6);
+}
+
+/* Small helper to make the content cards look premium */
+.card-premium {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+/* Gold color token */
+.text-gold {
+  color: #d4af37;
+}
+.border-gold {
+  border-color: rgba(212, 175, 55, 0.9);
+}
+.bg-dark-overlay {
+  background: rgba(8, 8, 8, 0.55);
+}
+
+.glow-gold {
+  filter: drop-shadow(0 0 0px #FFD700);
+  transition: filter 0.3s;
+}
+.group:hover .glow-gold {
+  filter: drop-shadow(0 0 6px #FFD700) drop-shadow(0 0 12px #FFD700);
+}
