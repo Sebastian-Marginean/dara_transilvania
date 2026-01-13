@@ -8,7 +8,7 @@ import { supabase } from "../../../supabaseClient";
 
 const categoryIcons: Record<string, string> = {
   Carne: "🥩",
-  "Condiment & FRT": "🧂",
+  "Condimente & FRT": "🧂",
   Conserve: "🥫",
   Cartofi: "🥔",
   Legume: "🥦",

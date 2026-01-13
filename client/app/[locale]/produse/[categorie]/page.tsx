@@ -62,7 +62,7 @@ const categoryConfig: Record<
       center: "bg-purple-500",
     },
   },
-  Condimente: {
+  "Condimente & FRT": {
     icon: "🧂",
     glowClass: "bg-orange-500/20",
     borderClass:
