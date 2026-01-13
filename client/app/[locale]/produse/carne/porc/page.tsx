@@ -39,7 +39,8 @@ export default function PorkProductsPage() {
         } else {
           setProducts([]);
         }
-      } catch (error) {
+      } catch {
+        // Am eliminat (error) de aici pentru a rezolva eroarea ESLint
         setProducts([
           {
             id: 1,
