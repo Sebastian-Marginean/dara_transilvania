@@ -53,7 +53,7 @@ export default function Footer({ locale }: FooterProps) {
             </div>
             {/* Darius Ioica */}
             <div>
-              <span className="font-bold text-yellow-300">Darius Ioica</span><br />
+              <span className="font-bold text-yellow-300">Darius Ioica</span> - {isRO ? "Agent de vânzări" : "Sales agent"}<br />
               <span className="text-gray-300">Tel: <a href="tel:+40773861499" className="underline">+40 773 861 499</a></span><br />
               <span className="text-gray-300">Email: <a href="mailto:office@daratransilvania.com" className="underline">office@daratransilvania.com</a></span>
             </div>
