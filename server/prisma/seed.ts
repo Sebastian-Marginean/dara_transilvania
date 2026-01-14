@@ -67,7 +67,7 @@ async function main() {
     description: "Pulpă de vită macră",
     description_en: "Lean beef round",
     price: 42,
-    image: "pulpa-de-vita2.jpeg"
+    image: "pulpa-de-vita.jpeg"
   },
   {
     name: "Rasol cu os de vita",
@@ -177,7 +177,7 @@ async function main() {
     description: "Pulpă de vițel fără os, ambalată la aproximativ 5kg.",
     description_en: "Boneless veal round, packed at about 5kg.",
     price: 45,
-    image: "carne-lucru-vitel.jpeg" 
+    image: "pulpa-de-vita2.jpeg" 
   },
   {
     name: "Carne de vitel lucru (tocata)",
