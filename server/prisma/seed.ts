@@ -64,17 +64,17 @@ async function main() {
     name: "Pulpa de vita",
     name_en: "Beef Round",
     category: "Vita",
-    description: "Pulpă de vită macră, recomandată pentru tocănițe sau gătit la cuptor.",
-    description_en: "Lean beef round, recommended for stews or oven cooking.",
+    description: "Pulpă de vită macră",
+    description_en: "Lean beef round",
     price: 42,
-    image: "pulpa-de-vita.jpeg"
+    image: "pulpa-de-vita2.jpeg"
   },
   {
     name: "Rasol cu os de vita",
     name_en: "Beef Shank with Bone",
     category: "Vita",
-    description: "Rasol de vită cu os, ideal pentru supe, ciorbe sau gătit lent la cuptor.",
-    description_en: "Beef shank with bone, ideal for soups, broths or slow oven cooking.",
+    description: "Rasol de vită cu os",
+    description_en: "Beef shank with bone",
     price: 37,
     image: "rasol-de-vita.jpeg"
   },
@@ -633,7 +633,7 @@ async function main() {
     description: "Cașcaval clasic Gouda.",
     description_en: "Classic Gouda cheese.",
     price: 31,
-    image: "cascaval-gouda.jpg"
+    image: "cascaval-gouda2.jpeg"
   },
   {
     name: "Cascaval edamer, grasime de 40%",
@@ -643,6 +643,15 @@ async function main() {
     description_en: "Classic Edamer cheese.",
     price: 32,
     image: "cascaval-edamer.jpg"
+  },
+  {
+    name: "Cascaval Emmental, grasime de 45%",
+    name_en: "Emmental Cheese, 45% fat",
+    category: "Lactate",
+    description: "Cașcaval clasic Emmental.",
+    description_en: "Classic Emmental cheese.",
+    price: 32,
+    image: "cascaval-emmental.jpeg"
   },
   {
     name: "Cascaval procesat si afumat, grasime de 45%",
