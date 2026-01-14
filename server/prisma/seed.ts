@@ -663,8 +663,8 @@ async function main() {
     image: "cascaval-afumat.jpg"
   },
   {
-    name: "Branza lazur cu mucegai",
-    name_en: "Lazur Blue Cheese",
+    name: "Cascaval maturat 6 luni cu mucegai nobil",
+    name_en: "Aged Blue-veined Cheese, 6 months",
     category: "Lactate",
     description: "Brânză cu mucegai albastru.",
     description_en: "Blue-veined cheese.",
