@@ -311,7 +311,7 @@ async function main() {
     description: "Ciolan de porc afumat, gata de pus în fasole sau varză.",
     description_en: "Smoked pork knuckle, ready for bean or cabbage stew.",
     price: 20,
-    image: "ciolan-haxe.jpeg"
+    image: "ciolan-porc-afumat.jpeg"
   },
 
   // --- 3. CARNE DE LUCRU & GRASIME ---
@@ -462,8 +462,8 @@ async function main() {
     image: "creveti-cruzi-decorticati.jpeg"
   },
   {
-    name: "File de pastrav 130-160/bax de 5kg",
-    name_en: "Trout Fillet 130-160g/5kg box",
+    name: "File de pastrav 130-160g/buc, Bax de 5kg",
+    name_en: "Trout Fillet 130-160g/pc, 5kg box",
     category: "Peste si Fructe de Mare",
     description: "File de păstrăv fin și delicat.",
     description_en: "Fine and delicate trout fillet.",
@@ -471,8 +471,8 @@ async function main() {
     image: "file-de-pastrav.jpg"
   },
   {
-    name: "File de salau zona de nil, 5kg",
-    name_en: "Nile Perch Fillet, 5kg",
+    name: "File de salau zona de nil 300-400g/buc, Bax de 6kg",
+    name_en: "Nile Perch Fillet 300-400g/pc, 6kg box",
     category: "Peste si Fructe de Mare",
     description: "File de șalău de Nil, carne albă și fermă.",
     description_en: "Nile perch fillet, white and firm meat.",
@@ -529,8 +529,8 @@ async function main() {
     image: "cartofi-7mm.jpeg"
   },
   {
-    name: "Cartofi pentru prajit premier 9mm / 2.5kg",
-    name_en: "Premier Fries 9mm / 2.5kg",
+    name: "Cartofi pentru prajit premier 9.6/9.6mm / 2.5kg",
+    name_en: "Premier Fries 9.6/9.6mm / 2.5kg",
     category: "Cartofi",
     description: "Cartofi Premier Gold, tăietură 9.6mm.",
     description_en: "Premier Gold fries, 9.6mm cut.",
@@ -719,8 +719,8 @@ async function main() {
     image: "golden-roemer.jpg"
   },
   {
-    name: 'Cascaval de capra cu trufe "chevrano", grasime de 50%',
-    name_en: '"Chevrano" Truffle Goat Cheese, 50% fat',
+    name: 'Cascaval de capra cu trufe "Visser Kaas", grasime de 50%',
+    name_en: '"Visser Kaas" Truffle Goat Cheese, 50% fat',
     category: "Lactate",
     description: "Cașcaval de capră cu trufe.",
     description_en: "Goat cheese with truffles.",
