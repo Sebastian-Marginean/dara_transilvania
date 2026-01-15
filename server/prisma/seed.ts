@@ -311,7 +311,7 @@ async function main() {
     description: "Ciolan de porc afumat, gata de pus în fasole sau varză.",
     description_en: "Smoked pork knuckle, ready for bean or cabbage stew.",
     price: 20,
-    image: "ciolan-porc-afumat.jpeg"
+    image: "Ciolan-porc-afumat.jpeg"
   },
 
   // --- 3. CARNE DE LUCRU & GRASIME ---

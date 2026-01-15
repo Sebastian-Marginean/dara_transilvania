@@ -146,6 +146,20 @@ const categoryConfig: Record<
       center: "bg-teal-500",
     },
   },
+  "Sosuri": {
+    icon: "🥗",
+    glowClass: "bg-teal-500/20",
+    borderClass:
+      "border-teal-500/20 hover:border-teal-500/50 hover:shadow-teal-500/40",
+    textClass: "from-teal-200 via-teal-100 to-teal-200",
+    bgClass: "from-teal-500/10 to-teal-700/10",
+    decorClass: "border-teal-400/50",
+    bgPatterns: {
+      top: "bg-teal-400",
+      bottom: "bg-teal-600",
+      center: "bg-teal-500",
+    },
+  },
 };
 
 export default function CategoryPage() {
